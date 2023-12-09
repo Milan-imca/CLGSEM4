@@ -15,7 +15,7 @@ This repository stores the Java code discussed in my college lectures. It includ
 
 ## Folder Structure
 
-- `src/`: Contains code snippets and examples covered in lectures.
+- `DS/Unit%201/Codes/src`: Contains code snippets and examples covered in lectures. Codes[https://github.com/Milan-imca/CLGSEM4/tree/master/DS/Unit%201/Codes/src]
 
 
 ## Usage
