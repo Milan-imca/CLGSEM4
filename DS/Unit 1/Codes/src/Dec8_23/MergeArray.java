@@ -35,10 +35,7 @@ public class MergeArray {
 //        for(int j=0;j<arr2.length;j++){
 //            newArray[i++] = arr2[j];
 //        }
-
-
-
-
+        
     }
 
 
