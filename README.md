@@ -36,7 +36,7 @@ This repository stores the Java code discussed in my college lectures. It includ
 
 ## Usage
 
-Feel free to explore the folders to access the code related to specific topics. You can clone the repository to your local machine using:
+Feel free to explore the folders to access the code related to specific topics.
 
 
 
