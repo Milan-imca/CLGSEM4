@@ -14,6 +14,7 @@ public class MergeArray {
         int j=0;
         int k =0;
 
+        //awesome Code as per complexity:
         while(size>0){
 
             if(i<arr.length){
@@ -35,7 +36,7 @@ public class MergeArray {
 //            newArray[i++] = arr2[j];
 //        }
 
-        //awesome Code as per complexity:
+
 
 
     }
