@@ -18,7 +18,7 @@ This repository stores the Java code discussed in my college lectures. It includ
 
 - `DS/Unit%201/Codes/src`: Contains code snippets and examples covered in lectures.
 - Codes 👇🏻👇🏻
-- [Click here to access lecture materials](Codes/src/)
+- [Click here to access lecture materials](DS/Unit%201/Codes/src)
 
 
 
