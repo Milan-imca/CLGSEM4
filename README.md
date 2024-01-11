@@ -1,4 +1,4 @@
-# College Lecture Code Repository
+# College Lecture Code Repository 
 
 <img height="100" src="https://user-images.githubusercontent.com/25181517/117201156-9a724800-adec-11eb-9a9d-3cd0f67da4bc.png"> 
 Java: where elegant code meets boundless possibilities, crafting solutions one line at a time, building the digital world with grace and precision
@@ -7,13 +7,12 @@ Welcome to my Java lecture code repository! This repository contains code exampl
 
 # 📚 Table of Contents 📖
 
-
 ## Linear Data Structures
 
 - 📚 **Arrays**: Exploring the fundamentals of arrays in Java.
-- 🔗 **Linked List**: Understanding and implementing linked lists.
 - 📦 **Stacks**: Delving into the stack data structure and its applications.
 - 🚦 **Queues**: Exploring the concept of queues and their practical uses.
+- 🔗 **Linked List**: Understanding and implementing linked lists.
 
 ## Non-Linear Data Structures
 
@@ -32,13 +31,8 @@ This repository stores the Java code discussed in my college lectures. It includ
 - Codes 👇🏻👇🏻
 - [Click here to access lecture materials](DS/Unit%201/Codes/src)
 
-
-
 ## Usage
 
 Feel free to explore the folders to access the code related to specific topics.
-
-
-
 
 
