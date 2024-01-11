@@ -1,7 +1,7 @@
 //Implementation of DEQUE : (double ended queue)
 import java.util.Scanner;
 
-class Circular_Queue {
+class Double_Ended {
   int front = -1;
   int rear = -1;
   int size = 0;
@@ -111,7 +111,7 @@ class Circular_Queue {
 
 public class DoubleEnded {
   public static void main(String[] args) {
-    Circular_Queue c = new Circular_Queue();
+    Double_Ended c = new Double_Ended();
     Scanner sc = new Scanner(System.in);
 
     while (true) {
