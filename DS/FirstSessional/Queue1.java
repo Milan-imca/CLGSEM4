@@ -13,7 +13,7 @@ class Queue {
       arr[rear] = value;
       size++;
     } else {
-      arr[++rear] = value;
+      arr[++rear] = value; // rear++ => arr[rear] =value;
       size++;
     }
   }
@@ -23,9 +23,9 @@ class Queue {
       System.out.println("Queue is empty");
       return -1;
     } else {
-      int value = arr[rear];
-      arr[rear] = 0;
-      rear--;
+      int value = arr[front];
+      arr[front] = 0;
+      front++;
       size--;
       return value;
     }
@@ -45,14 +45,15 @@ class Queue {
 public class Queue1 {
   public static void main(String[] args) {
     Queue q = new Queue();
-    q.display();
     q.insert(1);
     q.insert(2);
-    q.insert(3);
+    q.insert(3); 
     q.insert(4);
     q.insert(5);
-    q.insert(6);
+    // q.insert(6);
     q.remove();
     q.display();
+    // q.remove();
+    // q.display();
   }
 }

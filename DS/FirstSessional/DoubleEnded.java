@@ -1,3 +1,4 @@
+
 //Implementation of DEQUE : (double ended queue)
 import java.util.Scanner;
 
@@ -115,7 +116,8 @@ public class DoubleEnded {
     Scanner sc = new Scanner(System.in);
 
     while (true) {
-      System.out.println("\nEnter the choice :\n1:Insert at Rear\n2:Remove from Front\n3:Insert at Front\n4:Remove from Rear\n5:Exit");
+      System.out.println(
+          "\nEnter the choice :\n1:Insert at Rear\n2:Remove from Front\n3:Insert at Front\n4:Remove from Rear\n5:Exit");
       int ch = sc.nextInt();
 
       switch (ch) {
