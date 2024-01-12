@@ -1,0 +1,74 @@
+CREATE TABLE table1(
+  s_id NUMBER,
+  s_name VARCHAR2(50)
+);
+
+
+DECLARE 
+stu_id NUMBER;
+stu_name VARCHAR2(50);
+BEGIN
+    stu_id := &s_id;
+    stu_name := '&s_name';
+
+    INSERT INTO table1 (s_id,s_name) values (stu_id,stu_name);
+
+    dbms_output.put_line('Inserted successfully!');
+END;
+
+
+
+DECLARE 
+  id NUMBER;
+  name VARCHAR2(50);
+BEGIN
+  dbms_output.put_line('enter the id to update the name ');
+  id := &s_id;
+  dbms_output.put_line('enter the name also');
+  name := '&s_name';
+
+  UPDATE table1 SET S_NAME=name WHERE S_ID=id;
+END;
+/
+
+
+DECLARE
+ id NUMBER;
+ name VARCHAR2(50);
+ marks NUMBER;
+BEGIN
+  dbms_output.put_line('Enter id :');
+  id := &s_id;
+  dbms_output.put_line('Enter name :');
+  name := '&s_name';
+  dbms_output.put_line('Enter marks :');
+  marks := &marks;
+  INSERT INTO table1 VALUES (id,name,marks);
+
+
+   dbms_output.put_line('Enter id :');
+  id := &s_id;
+  dbms_output.put_line('Enter name :');
+  name := '&s_name';
+  dbms_output.put_line('Enter marks :');
+  marks := &marks;
+  INSERT INTO table1 VALUES (id,name,marks);
+
+   dbms_output.put_line('Enter id :');
+  id := &s_id;
+  dbms_output.put_line('Enter name :');
+  name := '&s_name';
+  dbms_output.put_line('Enter marks :');
+  marks := &marks;
+
+  INSERT INTO table1 VALUES (id,name,marks);
+END;
+/
+
+
+
+=> ALTER TABLE table_name
+ADD column_name VARCHAR2(50);
+example : 
+ALTER TABLE students
+ADD age NUMBER;

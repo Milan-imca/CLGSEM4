@@ -51,7 +51,8 @@ public class Queue1 {
     q.insert(4);
     q.insert(5);
     // q.insert(6);
-    q.remove();
+    // q.remove();
+    System.out.println("deleted element " + q.remove());
     q.display();
     // q.remove();
     // q.display();

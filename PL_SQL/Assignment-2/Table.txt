@@ -1,0 +1,30 @@
+create table employee (
+  e_id number,
+  e_name varchar2(50),
+  manager_id number
+);
+
+insert into employee values (1,'Ajay',101);
+insert into employee values (2,'Jay',101);
+insert into employee values (3,'Nita',101);
+
+=> added new column (salary)
+alter table employee
+add salary number;
+
+update employee
+set salary = 2500
+where e_id = 1;
+
+update employee
+set salary = 3000
+where e_id = 2;
+
+update employee
+set salary = 3000
+where e_id = 3;
+
+=> to change the column name :
+alter table employee
+rename column e_id to emp_no;
+

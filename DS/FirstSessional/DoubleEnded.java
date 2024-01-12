@@ -79,13 +79,20 @@ class Double_Ended {
   }
 
   // To check if the queue is empty
-  private boolean isEmpty() {
-    return size == 0;
+  public boolean isEmpty() {
+    // return size == 0;
+    if (size == 0) {
+      return true;
+    }
+    return false;
   }
 
   // To check if the queue is full
   private boolean isFull() {
-    return size == arr.length;
+    if (size == arr.length) {
+      return true;
+    }
+    return false;
   }
 
   // To display the queue
@@ -114,7 +121,6 @@ public class DoubleEnded {
   public static void main(String[] args) {
     Double_Ended c = new Double_Ended();
     Scanner sc = new Scanner(System.in);
-
     while (true) {
       System.out.println(
           "\nEnter the choice :\n1:Insert at Rear\n2:Remove from Front\n3:Insert at Front\n4:Remove from Rear\n5:Exit");
