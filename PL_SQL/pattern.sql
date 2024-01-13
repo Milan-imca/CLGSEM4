@@ -41,7 +41,7 @@ end;
 -- MILA 
 -- MILAN
 declare
-  word VARCHAR2(6) := 'YASHVI';
+  word VARCHAR2(6) := 'MILAN';
   i NUMBER;
   j NUMBER;
 begin
