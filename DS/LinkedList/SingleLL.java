@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 // Node class!
 class Node {
   int value;
@@ -71,6 +72,36 @@ class Sl {
 
   }
 
+  public void deleteFirstNode() {
+    Node temp = head;
+    if (head == null) {
+      System.out.println("Linked list is empty!!");
+    } else {
+      temp = temp.next;
+      System.out.println("Element deleted - " + head.value);
+      head = temp;
+    }
+  }
+
+  public void deleteLastNode() {
+    Node temp = head;
+    if (tail == null) {
+      System.out.println("Linked list is empty!!");
+    } else if (temp.next == null) {
+      System.out.println("Element deleted : " + tail.value);
+      tail = null;
+      head = null;
+      return;
+    } else {
+      while (temp.next.next != null) {
+        temp = temp.next;
+      }
+      System.out.println("Element Deleted : " + temp.next.value);
+      temp.next = null;
+      tail = temp;
+    }
+  }
+
   public void display() {
     Node temp = head;
     while (temp != null) {
@@ -91,7 +122,9 @@ public class SingleLL {
       System.out.println("Press 1 : To insert at First.");
       System.out.println("Press 2 : To insert at Last.");
       System.out.println("Press 3 : To insert at your desired index.");
-      System.out.println("Press 4 : To Exit.");
+      System.out.println("Press 4 : To Delete from First.");
+      System.out.println("Press 5 : To Delete from Last.");
+      System.out.println("Press 6 : To Exit.");
 
       int choice = sc.nextInt();
 
@@ -123,6 +156,17 @@ public class SingleLL {
           break;
 
         case 4:
+          System.out.println("Delete from first");
+          l.deleteFirstNode();
+          l.display();
+
+          break;
+        case 5:
+          System.out.println("Delete from last ");
+          l.deleteLastNode();
+          l.display();
+          break;
+        case 6:
           System.exit(0);
           break;
 
