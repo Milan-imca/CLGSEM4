@@ -1,0 +1,136 @@
+import java.util.Scanner;
+// Node class!
+class Node {
+  int value;
+  Node next;
+
+  Node(int value) {
+    this.value = value;
+  }
+}
+
+// Single Linked List class!
+class Sl {
+  // variables needed!
+  Node head = null;
+  Node tail = null;
+  int size = 0;
+
+  public void insertAtFirst(int value) {
+    Node newNode = new Node(value);
+
+    if (head == null) {
+      head = newNode;
+      tail = newNode;
+    } else {
+      newNode.next = head;
+      head = newNode;
+    }
+
+    size++;
+  }
+
+  public void insertAtIndex(int value, int index) {
+    Node newNode = new Node(value);
+    Node temp = head;
+    if (index == 1) {
+      insertAtFirst(value);
+    } else {
+      for (int i = 2; i <= index - 1; i++) {
+        if (temp == null) {
+          break;
+        } else {
+          temp = temp.next;
+
+        }
+      }
+      if (temp == null) {
+        System.out.println("Location invalid");
+      } else {
+        newNode.next = temp.next;
+        temp.next = newNode;
+      }
+
+    }
+
+  }
+
+  public void insertAtLast(int value) {
+    Node newNode = new Node(value);
+    Node temp = head;
+    if (tail == null) {
+      head = newNode;
+      tail = newNode;
+    } else {
+      while (temp.next != null) {
+        temp = temp.next;
+      }
+      temp.next = newNode;
+      newNode.next = null;
+    }
+
+  }
+
+  public void display() {
+    Node temp = head;
+    while (temp != null) {
+      System.out.print(temp.value + " -> ");
+      temp = temp.next;
+    }
+    System.out.print("null");
+    System.out.println();
+  }
+}
+
+public class SingleLL {
+
+  public static void main(String[] args) {
+    Sl l = new Sl();
+    Scanner sc = new Scanner(System.in);
+    while (true) {
+      System.out.println("Press 1 : To insert at First.");
+      System.out.println("Press 2 : To insert at Last.");
+      System.out.println("Press 3 : To insert at your desired index.");
+      System.out.println("Press 4 : To Exit.");
+
+      int choice = sc.nextInt();
+
+      switch (choice) {
+        case 1:
+          System.out.println("Insert at First");
+          System.out.println("Enter the value to insert : ");
+          int firstVal = sc.nextInt();
+          l.insertAtFirst(firstVal);
+          l.display();
+          break;
+
+        case 2:
+          System.out.println("Insert at Last");
+          System.out.println("Enter the value to insert : ");
+          int lastVal = sc.nextInt();
+          l.insertAtLast(lastVal);
+          l.display();
+          break;
+
+        case 3:
+          System.out.println("Insert at Desired Index.");
+          System.out.println("Enter the value to insert : ");
+          int value = sc.nextInt();
+          System.out.println("Enter the index :");
+          int index = sc.nextInt();
+          l.insertAtIndex(value, index);
+          l.display();
+          break;
+
+        case 4:
+          System.exit(0);
+          break;
+
+        default:
+          System.out.println("Invalid selection!!");
+          break;
+      }
+    }
+
+  }
+}
