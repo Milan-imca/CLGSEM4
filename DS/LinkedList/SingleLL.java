@@ -38,12 +38,7 @@ class Sl {
       insertAtFirst(value);
     } else {
       for (int i = 2; i <= index - 1; i++) {
-        if (temp == null) {
-          break;
-        } else {
           temp = temp.next;
-
-        }
       }
       if (temp == null) {
         System.out.println("Location invalid");
@@ -53,7 +48,6 @@ class Sl {
       }
 
     }
-
   }
 
   public void insertAtLast(int value) {

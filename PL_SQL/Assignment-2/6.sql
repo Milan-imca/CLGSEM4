@@ -7,7 +7,7 @@
 -- ORACLE
 set serveroutput on;
 declare
-word VARCHAR2(10) := 'ORACLE';
+word VARCHAR2(10) := 'HARSHIL';
 word_length NUMBER ;
 i NUMBER;
 begin

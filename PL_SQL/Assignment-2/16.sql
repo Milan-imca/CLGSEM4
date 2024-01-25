@@ -22,3 +22,34 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE(num_to_check || ' is not a prime number.');
     END IF;
 END;
+/
+
+
+
+
+
+
+declare
+no number := '&no';
+is_prime boolean := true;
+i number ;
+begin
+  if no <= 1 then 
+    is_prime := false;
+    else
+     for i in 2..round(sqrt(no))
+     loop
+       if mod(no,i)=0 then
+       is_prime := false;
+       exit;
+       end if;
+     end loop;
+  end if;
+
+  if(is_prime) then
+  dbms_output.put_line('prime');
+  else
+  dbms_output.put_line('not prime');
+  end if;
+end;
+/

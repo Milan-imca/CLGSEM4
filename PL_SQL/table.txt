@@ -1,7 +1,8 @@
-CREATE TABLE table1(
+CREATE TABLE table2(
   s_id NUMBER,
   s_name VARCHAR2(50)
 );
+
 
 
 DECLARE 
