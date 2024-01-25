@@ -96,6 +96,25 @@ class Sl {
     }
   }
 
+  public void deleteAtIndex(int index) {
+    Node temp = head;
+    if (head == null) {
+      System.out.println("Linked List is Empty");
+    } else if (index == 1) {
+      deleteFirstNode();
+    } else {
+      for (int i = 2; i <= index - 1; i++) {
+        temp = temp.next;
+      }
+
+      if (temp == null) {
+        System.out.println("Invalid location to delete the Node!");
+      } else {
+        System.out.println("Element Delete is : " + temp.next.value);
+        temp.next = temp.next.next;
+      }
+    }
+  }
   public void display() {
     Node temp = head;
     while (temp != null) {
@@ -118,7 +137,8 @@ public class SingleLL {
       System.out.println("Press 3 : To insert at your desired index.");
       System.out.println("Press 4 : To Delete from First.");
       System.out.println("Press 5 : To Delete from Last.");
-      System.out.println("Press 6 : To Exit.");
+      System.out.println("Press 6 : To Delete from desired index");
+      System.out.println("Press 7 : To Exit.");
 
       int choice = sc.nextInt();
 
@@ -160,7 +180,16 @@ public class SingleLL {
           l.deleteLastNode();
           l.display();
           break;
+
         case 6:
+          System.out.println("Delete from the desired index:");
+          System.out.println("Enter the index for deleting the Node : ");
+          int location = sc.nextInt();
+          l.deleteAtIndex(location);
+          l.display();
+
+          break;
+        case 7:
           System.exit(0);
           break;
 
