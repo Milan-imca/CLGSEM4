@@ -38,7 +38,7 @@ class Sl {
       insertAtFirst(value);
     } else {
       for (int i = 2; i <= index - 1; i++) {
-          temp = temp.next;
+        temp = temp.next;
       }
       if (temp == null) {
         System.out.println("Location invalid");
@@ -115,6 +115,7 @@ class Sl {
       }
     }
   }
+
   public void display() {
     Node temp = head;
     while (temp != null) {
@@ -126,7 +127,7 @@ class Sl {
   }
 }
 
-public class SingleLL {
+public class SinglyLL {
 
   public static void main(String[] args) {
     Sl l = new Sl();
