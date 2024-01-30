@@ -97,24 +97,28 @@ class CircularLinkedList {
   }
 
   // delete last node:
-  public void deleteLastNode() {
-    if (tail == null) {
-      System.out.println("Linked List is empty!!");
-      return;
-    }
-    System.out.println("Last Element Deleted : " + tail.value);
-
-    if (tail == head) {
-      tail = head = null;
-    } else {
-      Node temp = head;
-      while (temp.next != tail) {
-        temp = temp.next;
-      }
-      temp.next = tail.next;
-      tail = temp;
+  public void deleteLastNode() 
+  {
+    if (tail == null) 
+    {
+        System.out.println("Linked List is empty!!");
+        return;
     }
 
+    System.out.println("Last Element Deleted: " + tail.value);
+
+    if (tail == head) 
+    {
+        tail = head = null;
+    } 
+    else {
+        Node temp = head;
+        while (temp.next != tail) {
+            temp = temp.next;
+        }
+        temp.next = head; // Remove the reference to the tail node
+        tail = temp;
+    }
   }
 
   // delete from the paritcular location
