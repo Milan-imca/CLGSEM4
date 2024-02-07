@@ -1,0 +1,11 @@
+Regirtration Form:
+1 -> firstname ,lastname,phone no.,gender,hobbies (any 3),submit,btn,on submit redirect to login page(get method)
+    *(regex)firstname only characters and it should be min 3 and max 8, lastname should be characters only phone no. must be 10 digits only.
+
+2 -> login form must contain username,password,forget pass link and reset btn once clicked login button it must      be redirected to the home page(post method). In home page it must display "welcome to php".
+    *(regex) username 1 Uppercase 1 lowercase 1 number 1 symbol
+
+3 -> If clicked on forget password link it then there must be 2 text fields of email and username with 2 buttons
+  reset and cancel with request method , forget password action must be php self 
+
+  note use isset anywher in the code!

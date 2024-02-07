@@ -67,13 +67,14 @@ class Sl {
   }
 
   public void deleteFirstNode() {
-    Node temp = head;
+    // Node temp = head;
     if (head == null) {
       System.out.println("Linked list is empty!!");
     } else {
-      temp = temp.next;
+      // temp = temp.next;
       System.out.println("Element deleted - " + head.value);
-      head = temp;
+      // head = temp;
+      head = head.next;
     }
   }
 

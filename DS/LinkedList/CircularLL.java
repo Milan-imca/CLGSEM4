@@ -43,12 +43,12 @@ class CircularLinkedList {
     tail = newNode;
   }
 
-  // insert node at particular location
+  // insert node at particular location 
   public void inserAtLocation(int value, int index) {
     Node newNode = new Node(value);
 
     if (index < 1) {
-      System.out.println("Invali index!Index should be atleast 1.");
+      System.out.println("Invalid index!Index should be atleast 1.");
       return;
     }
 
@@ -97,27 +97,23 @@ class CircularLinkedList {
   }
 
   // delete last node:
-  public void deleteLastNode() 
-  {
-    if (tail == null) 
-    {
-        System.out.println("Linked List is empty!!");
-        return;
+  public void deleteLastNode() {
+    if (tail == null) {
+      System.out.println("Linked List is empty!!");
+      return;
     }
 
     System.out.println("Last Element Deleted: " + tail.value);
 
-    if (tail == head) 
-    {
-        tail = head = null;
-    } 
-    else {
-        Node temp = head;
-        while (temp.next != tail) {
-            temp = temp.next;
-        }
-        temp.next = head; // Remove the reference to the tail node
-        tail = temp;
+    if (tail == head) {
+      tail = head = null;
+    } else {
+      Node temp = head;
+      while (temp.next != tail) {
+        temp = temp.next;
+      }
+      temp.next = head; // Remove the reference to the tail node
+      tail = temp;
     }
   }
 
