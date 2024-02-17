@@ -1,0 +1,12 @@
+Create a Registration Form:
+Field name : name,phone no:,address.
+
+Create 3 buttons submit,update,delete:
+Function: 
+submit -> data should be entered in the database,
+update -> data should be update as per user's choice in the table using name,
+delete -> data should be deleted from the table using name.
+
+Create a field to take the user and create display button to display the data of the username entered.
+
+Give proper validations. 
