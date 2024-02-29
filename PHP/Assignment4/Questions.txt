@@ -1,0 +1,22 @@
+Q:1 Write a PHP script to create session and store username and address in it and print it in next
+page.
+Q:2 Write a PHP script to create a cookie and store username and address in it and print it in next
+page.
+Q:3 Write a PHP script to create a session and reset its variable and destroy it after an hour.
+Q:4 Write a PHP script which accept the only .jpg and jpeg file format images.
+Q:5 Write a PHP script which accept the Uname,Password,MobileNo and display username and
+mobile no on next screen for 20 seconds.
+Q:6 Write a PHP script for login information once user loged in using remember me then next time
+credential will appear on login page.
+Q:7 Write a PHP script to send email to any email address.
+Q.8 Create a class Employee which contains eid, ename, basic salary. Calculate net salary and
+display it.
+Net salary = Basic + HRA + DA – PF
+Q.9 Create a class Product which contains product id, product name, price and quantity. Use
+constructor and destructor.
+Q.10 Create a class Student which contains roll no, name and marks of three subjects. Calculate
+percentage and display it. 
+
+
+
+
