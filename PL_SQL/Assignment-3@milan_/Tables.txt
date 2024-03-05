@@ -1,0 +1,35 @@
+Creating employee table:
+
+CREATE TABLE EMPLOYEE(
+  eno NUMBER,
+  ename VARCHAR2(20),
+  department VARCHAR2(10),
+  designation VARCHAR2(10),
+  salary NUMBER
+);
+
+😁Records for table:
+INSERT INTO EMPLOYEE VALUES (1,'Ashish','it','manager',40000);
+INSERT INTO EMPLOYEE VALUES (2,'Aayush','finance','manager',60000);
+INSERT INTO EMPLOYEE VALUES (3,'Shrey','Promotion','HOD',90000);
+INSERT INTO EMPLOYEE VALUES (4,'Harshil','CLOUD','HOD',95000);
+INSERT INTO EMPLOYEE VALUES (5,'Milan','it','CEO',100000);
+
+
+Creating person table:
+
+CREATE TABLE person(
+  pid NUMBER(1),
+  pname VARCHAR2(20),
+  age NUMBER(3),
+  height VARCHAR2(4),
+  weight NUMBER(3),
+  bloodgroup VARCHAR2(3)
+);
+
+😁Records for table:
+INSERT INTO person VALUES (1,'Milan',21,'5.2',54,'AB-');
+INSERT INTO person VALUES (2,'Harshil',20,'5.3',60,'O+');
+INSERT INTO person VALUES (3,'Shrey',20,'5.3',55,'O+');
+INSERT INTO person VALUES (4,'Aayush',18,'5.4',55,'B+');
+INSERT INTO person VALUES (5,'Ashish',13,'4',35,'B+');
