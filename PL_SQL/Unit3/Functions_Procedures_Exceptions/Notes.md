@@ -1,6 +1,6 @@
 # Syntax For Function
 
-```
+```sql
 CREATE [OR REPLACE] FUNCTION function_name
 (PARAMETER 1 ,PARAMETER 2,...) RETURN datatype
 IS
@@ -13,7 +13,7 @@ END;
 
 # Syntax For Procedure
 
-```
+```sql
 CREATE [OR REPLACE] PROCEDURE procedure_name
 (PARAMETER 1,PARAMETER 2,...)
 IS
@@ -24,7 +24,7 @@ END procedure_name;
 ```
 
 # Syntax For Exceptions
-```
+```sql
 DECLARE 
    exception_name EXCEPTION; 
 BEGIN 
