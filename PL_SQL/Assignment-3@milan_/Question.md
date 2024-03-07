@@ -22,4 +22,3 @@
 9. Write a procedure to display person’s details whose age is 20.
 10. Write PL/SQL block to fetch the data of person whose pid is 4. Check the age is above 18 or not. If age is above 18, then print 'you are eligible for voting'; else, print 'not eligible'.
 
-**Made by Milan** 🚀

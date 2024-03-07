@@ -22,4 +22,3 @@ in ‘IT’ department.
 5. Write a trigger which will store eno,old_salary,new_salary into
 new_emp table before update the salary in emp table.
 
-**Made by Milan** 🚀

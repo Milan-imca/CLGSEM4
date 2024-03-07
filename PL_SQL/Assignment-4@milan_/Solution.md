@@ -1,4 +1,4 @@
-## 📝ASSIGNMENT 4 SOLUTION 
+## 📝ASSIGNMENT 4 SOLUTION
 
 ## Creating emp table (eno, ename, department, salary)
 
@@ -386,3 +386,6 @@ SQL> select * from new_emp;
 ---------- ---------- ----------
          3      70000      90000
 ```
+
+
+**Made by Milan** 🧑🏻‍💻🌐🚀
