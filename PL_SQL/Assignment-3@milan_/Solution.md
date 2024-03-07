@@ -3,6 +3,7 @@
 To execute any procedure, simply write `exec` or `execute` followed by the procedure name.
 
 ### Example
+
 ```sql
 exec procedure_name;
 ```
@@ -59,7 +60,7 @@ BEGIN
     RETURN details;
 END;
 /
-```
+``` 
 
 ```sql
 DECLARE
