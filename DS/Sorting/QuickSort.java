@@ -7,8 +7,7 @@ public class QuickSort {
     System.out.println(Arrays.toString(arr));
   }
 
-  public static void sort(int[] arr, int startIdx, int endIdx) 
-  {
+  public static void sort(int[] arr, int startIdx, int endIdx) {
     if (startIdx >= endIdx) {
       return;
     }
@@ -16,8 +15,7 @@ public class QuickSort {
     int end = endIdx;
     int mid = start + (end - start) / 2;
     int pivot = arr[mid];
-    while (start <= end) 
-    {
+    while (start <= end) {
       while (arr[start] < pivot) {
         start++;
       }

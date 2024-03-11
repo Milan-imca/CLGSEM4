@@ -60,7 +60,7 @@ BEGIN
     RETURN details;
 END;
 /
-``` 
+```
 
 ```sql
 DECLARE
