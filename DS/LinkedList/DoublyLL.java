@@ -119,7 +119,7 @@ class DoublyLinkedList {
         temp = temp.next;
       }
 
-      if (temp == null || temp.next == null) {
+      if (temp == null || temp.next == null){
         System.out.println("Invalid index!!");
       } else {
         System.out.println("Deleted Element was : " + temp.next.value);
