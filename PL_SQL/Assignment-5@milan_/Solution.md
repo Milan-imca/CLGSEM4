@@ -4,14 +4,22 @@
 
 ```sql
 DECLARE
+    e_eno emp.eno%TYPE;
+    e_ename emp.ename%TYPE;
+    e_department emp.department%TYPE;
+    e_salary emp.salary%TYPE;
   CURSOR it_employees IS
     SELECT * from emp
     WHERE department='IT';
 BEGIN
-  FOR e in it_employees
-    LOOP
-      INSERT INTO dep_it VALUES (e.eno,e.ename,e.department,e.salary);
-    END LOOP;
+ OPEN it_employees ;
+ LOOP
+  FETCH it_employees INTO e_eno,e_ename,e_department,e_salary;
+  EXIT WHEN it_employees%NOTFOUND;
+  INSERT INTO dep_it VALUES (e_eno,e_ename,e_department,e_salary);
+ END LOOP;
+ CLOSE it_employees;
+ COMMIT;
 END;
 /
 ```
@@ -20,19 +28,20 @@ END;
 
 ```sql
 DECLARE
-  CURSOR display_details_desc IS
-  SELECT * from emp
-  ORDER BY salary DESC;
+  CURSOR desc_order IS
+    SELECT * FROM emp ORDER BY salary DESC;
+    e_eno emp.eno%TYPE;
+    e_ename emp.ename%TYPE;
+    e_department emp.department%TYPE;
+    e_salary emp.salary%TYPE;
 BEGIN
-  FOR e in display_details_desc
+  OPEN desc_order;
   LOOP
-    DBMS_OUTPUT.PUT_LINE(
-      ' ENO : ' || e.eno ||
-      ' ENAME : ' || e.ename ||
-      ' DEPARTMENT : ' || e.department ||
-      ' SALARY : ' || e.salary || CHR(10)
-      );
+    FETCH desc_order INTO e_eno,e_ename,e_department,e_salary;
+    EXIT WHEN desc_order%NOTFOUND;
+    DBMS_OUTPUT.PUT_LINE('Employee No: ' || e_eno || ', Employee Name: ' || e_ename || ', Department: ' || e_department || ', Salary: ' || e_salary || CHR(10));
   END LOOP;
+  CLOSE desc_order;
 END;
 /
 ```
@@ -41,33 +50,83 @@ END;
 
 ```sql
 DECLARE
-  CURSOR emp_finance IS
-    SELECT * FROM emp
-      WHERE department='Finance';
-  BEGIN
-    FOR emp_rec IN emp_finance
+    CURSOR c_employees IS
+        SELECT eno, ename, department, salary
+        FROM emp
+        WHERE department = 'Finance'
+        FOR UPDATE;
+
+    e_eno emp.eno%TYPE;
+    e_ename emp.ename%TYPE;
+    e_department emp.department%TYPE;
+    e_salary emp.salary%TYPE;
+BEGIN
+    OPEN c_employees;
     LOOP
-      UPDATE emp set salary=salary*1.03
-      WHERE emp.department='Finance';
+        FETCH c_employees INTO e_eno, e_ename, e_department, e_salary;
+        EXIT WHEN c_employees%NOTFOUND;
+
+        UPDATE emp
+        SET salary = 1000*1.03
+        WHERE CURRENT OF c_employees;
+
+        DBMS_OUTPUT.PUT_LINE('Salary updated for employee: ' || e_eno || ', Name: ' || e_ename);
     END LOOP;
+    CLOSE c_employees;
+
     COMMIT;
-  END;
-  /
+END;
+/
+
 ```
 
 ### 4. Create an explicit cursor to delete a record who is working in ‘management’ department.
 
 ```sql
-DECLARE
-  CURSOR del_manage IS
-    SELECT * FROM emp WHERE department='Management';
-  BEGIN
-    FOR emp_rec IN del_manage
-    LOOP
-        DELETE FROM emp where emp.department='Management';
-    END LOOP;
-  END;
-  /
+  DECLARE
+  /* Define a cursor to hold the employee data */
+  CURSOR emp_cursor IS
+  SELECT eno -- Replace with actual column names
+  FROM emp
+  WHERE department = 'management';
+
+  /* Define a record variable to hold fetched data */
+  emp_record emp_cursor%ROWTYPE;
+
+  /* Variable to store the number of rows deleted */
+  num_deleted INTEGER := 0;
+BEGIN
+  /* Open the cursor to prepare for fetching data */
+  OPEN emp_cursor;
+
+  /* Loop through each record in the cursor */
+  LOOP
+    /* Fetch the next row into the record variable */
+    FETCH emp_cursor INTO emp_record;
+
+    /* Exit the loop if no more rows to fetch */
+    EXIT WHEN emp_cursor%NOTFOUND;
+
+    /* Delete the employee record using the employee ID */
+    DELETE FROM emp
+    WHERE eno = emp_record.eno;
+
+    /* Increment the counter for deleted rows */
+    num_deleted := num_deleted + 1;
+
+    /* Commit the deletion after each row (optional for smaller datasets) */
+    COMMIT;
+  END LOOP;
+
+  /* Close the cursor to release resources */
+  CLOSE emp_cursor;
+
+  /* Print the number of deleted records (optional) */
+  DBMS_OUTPUT.PUT_LINE('Number of employees deleted: ' || num_deleted);
+
+END;
+/
+
 ```
 
 ### 5. Write a code to create a package which will include two procedures for insert a record into a table and delete a record from the table.
@@ -474,9 +533,8 @@ END emp_package;
 /
 ```
 
-
 ```sql
-DECLARE 
+DECLARE
 maximum_salary NUMBER;
 BEGIN
   emp_package.insert_record(12,'Vishal','Cloud',60000);
