@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class QuickSort {
   public static void main(String[] args) {
-    int arr[] = { 6, 5, 4, 3, 2, 1 };
+    int arr[] = { 6,5,4,3,2,1};
     sort(arr, 0, arr.length - 1);
     System.out.println(Arrays.toString(arr));
   }
@@ -15,6 +15,7 @@ public class QuickSort {
     int end = endIdx;
     int mid = start + (end - start) / 2;
     int pivot = arr[mid];
+
     while (start <= end) {
       while (arr[start] < pivot) {
         start++;
@@ -30,7 +31,7 @@ public class QuickSort {
         end--;
       }
     }
-    sort(arr, startIdx, end - 1);
+    sort(arr, startIdx, end);
     sort(arr, start, endIdx);
   }
 }
