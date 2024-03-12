@@ -37,16 +37,16 @@ public class BST {
       return;
     }
     System.out.print(root.value + " ");// root
-    inOrder(root.left); // l
-    inOrder(root.right); // r
+    preOrder(root.left); // l
+    preOrder(root.right); // r
   }
 
   public static void postOrder(Node root) {
     if (root == null) {
       return;
     }
-    inOrder(root.left); // l
-    inOrder(root.right); // r
+    postOrder(root.left); // l
+    postOrder(root.right); // r
     System.out.print(root.value + " ");// root
   }
 

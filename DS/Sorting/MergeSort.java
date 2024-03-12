@@ -2,7 +2,9 @@ import java.util.Arrays;
 
 public class MergeSort {
   public static void main(String[] args) {
-    int[] arr = { 5, 4, 3, 2, 1 };
+    int[] arr = { 10, 11, 90, 3, 34  };
+    //10,11,90
+    //3,34
     divide(arr, 0, arr.length - 1);
     System.out.println(Arrays.toString(arr));
 
